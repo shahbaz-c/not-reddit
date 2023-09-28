@@ -17,8 +17,8 @@ const SubredditCreatePost: FC<SubredditCreatePostProps> = ({ session }) => {
 	const pathname = usePathname();
 
 	return (
-		<li className='overflow-hidden rounded-md bg-gray-900 shadow'>
-			<div className='h-full px-6 py-4 flex justify-between gap-6'>
+		<li className='overflow-hidden rounded-md bg-gray-900 shadow list-none'>
+			<div className='h-full px-6 py-8 flex justify-between gap-6'>
 				<div className='relative'>
 					<UserAvatar
 						user={{
