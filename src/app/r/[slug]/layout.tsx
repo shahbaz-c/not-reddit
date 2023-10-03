@@ -3,6 +3,8 @@ import { db } from '@/lib/db';
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import SubscribeLeaveToggle from '@/components/SubscribeLeaveToggle';
+import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/Button';
 
 const Layout = async ({
 	children,
@@ -57,14 +59,14 @@ const Layout = async ({
 					<div className='flex flex-col col-span-2 space-y-6'>{children}</div>
 
 					{/* SUBREDDIT INFO SIDEBAR */}
-					<div className='hidden md:block overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last'>
+					<div className='hidden md:block overflow-hidden h-fit rounded-lg border border-gray-600 order-first md:order-last'>
 						<div className='px-6 py-4'>
 							<p className='font-semibold py-3'>
 								About <span className='text-[#8000ff]'>r/{subreddit.name}</span>
 							</p>
 						</div>
 
-						<dl className='divide-y divide-gray-500 px-6 py-4 text-sm leading-6 bg-gray-900'>
+						<dl className='divide-y divide-gray-800 px-6 py-4 text-sm leading-6 bg-gray-900'>
 							<div className='flex justify-between gap-x-4 py-3'>
 								<dt className='text-gray-400'>Created</dt>
 								<dd className='text-gray-200'>
@@ -96,6 +98,16 @@ const Layout = async ({
 									subredditName={subreddit.name}
 								/>
 							) : null}
+
+							<Link
+								href={`r/${slug}/submit`}
+								className={buttonVariants({
+									variant: 'subtle',
+									className: 'w-full mb-6',
+								})}
+							>
+								Create Post
+							</Link>
 						</dl>
 					</div>
 				</div>
