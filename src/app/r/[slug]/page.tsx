@@ -1,3 +1,4 @@
+import PostFeed from '@/components/PostFeed';
 import SubredditCreatePost from '@/components/SubredditCreatePost';
 import { PAGINATION_RESULTS } from '@/config';
 import { getAuthSession } from '@/lib/auth';
@@ -41,8 +42,7 @@ const page = async ({ params }: PageProps) => {
 			</h1>
 
 			<SubredditCreatePost session={session} />
-
-			{/* Show posts in user feed */}
+			<PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} />
 		</>
 	);
 };
