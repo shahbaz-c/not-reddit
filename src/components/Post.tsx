@@ -3,6 +3,9 @@ import { Post, User, Vote } from '@prisma/client';
 import { formatTimeToNow } from '@/lib/utils';
 import { MessageSquare } from 'lucide-react';
 import EditorOutput from './EditorOutput';
+import PostVoteClient from './postVote/PostVoteClient';
+
+type PartialVote = Pick<Vote, 'type'>;
 
 interface PostProps {
 	subredditName: string;
@@ -11,15 +14,27 @@ interface PostProps {
 		votes: Vote[];
 	};
 	numOfComments: number;
+	numOfVotes: number;
+	currentVote?: PartialVote;
 }
 
-const Post: FC<PostProps> = ({ subredditName, post, numOfComments }) => {
+const Post: FC<PostProps> = ({
+	subredditName,
+	post,
+	numOfComments,
+	numOfVotes,
+	currentVote,
+}) => {
 	const postRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<div className='rounded-md bg-gray-900 shadow'>
 			<div className='px-6 py-4 flex justify-between'>
-				{/* TODO: PostVotes */}
+				<PostVoteClient
+					postId={post.id}
+					numOfInitialVotes={numOfVotes}
+					initialVote={currentVote?.type}
+				/>
 
 				<div className='w-0 flex-1'>
 					<div className='max-h-40 mt-1 text-xs text-gray-400'>
