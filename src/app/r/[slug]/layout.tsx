@@ -60,8 +60,8 @@ const Layout = async ({
 
 					{/* SUBREDDIT INFO SIDEBAR */}
 					<div className='hidden md:block overflow-hidden h-fit rounded-lg border border-gray-600 order-first md:order-last'>
-						<div className='px-6 py-4'>
-							<p className='font-semibold py-3'>
+						<div className='px-6 py-4 bg-teal-300'>
+							<p className='font-semibold py-3 text-black'>
 								About <span className='text-[#8000ff]'>r/{subreddit.name}</span>
 							</p>
 						</div>

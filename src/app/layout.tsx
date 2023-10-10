@@ -22,11 +22,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang='en'
-			className={cn(
-				// 'bg-white text-slate-900 antialiased light',
-				'bg-black text-zinc-50 antialiased dark',
-				inter.className
-			)}
+			className={cn('bg-black text-zinc-50 antialiased dark', inter.className)}
 		>
 			<body className='min-h-screen pt-12 bg-gray-950 antialiased'>
 				<Providers>
