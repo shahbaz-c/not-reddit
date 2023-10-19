@@ -16,9 +16,7 @@ import { useRouter } from 'next/navigation';
 import { Users } from 'lucide-react';
 import debounce from 'lodash.debounce';
 
-interface SearchBarProps {}
-
-const SearchBar: FC<SearchBarProps> = ({}) => {
+const SearchBar = ({}) => {
 	const [input, setInput] = useState<string>('');
 	const router = useRouter();
 
