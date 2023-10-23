@@ -58,9 +58,6 @@ model User {
   Post        Post[]
   Comment     Comment[]
   CommentVote CommentVote[]
-  // Vote         Vote[]
-  // Subscription Subscription[]
-  // Subreddit    Subreddit[]
   Subreddit   Subreddit[]
 }
 
