@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
 	Command,
 	CommandInput,
@@ -12,19 +12,21 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Prisma, Subreddit } from '@prisma/client';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Users } from 'lucide-react';
 import debounce from 'lodash.debounce';
+import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 
 const SearchBar = ({}) => {
 	const [input, setInput] = useState<string>('');
+	const commandRef = useRef<HTMLDivElement>(null);
 	const router = useRouter();
+	const pathname = usePathname();
 
 	const {
 		data: queryResults,
 		refetch,
 		isFetched,
-		isFetching,
 	} = useQuery({
 		queryFn: async () => {
 			if (!input) return [];
@@ -45,8 +47,21 @@ const SearchBar = ({}) => {
 		request();
 	}, []);
 
+	// hook to close search bar when clicking outside of it
+	useOnClickOutside(commandRef, () => {
+		setInput('');
+	});
+
+	// sets seacrh bar input to an empty string and thereby closes search bar when using the enter key
+	useEffect(() => {
+		setInput('');
+	}, [pathname]);
+
 	return (
-		<Command className='relative rounded-lg border max-w-lg z-50 overflow-visible'>
+		<Command
+			ref={commandRef}
+			className='relative rounded-lg border max-w-lg z-50 overflow-visible'
+		>
 			<CommandInput
 				value={input}
 				onValueChange={(text) => {

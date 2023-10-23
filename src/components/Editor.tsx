@@ -183,7 +183,7 @@ const Editor: FC<EditorProps> = ({ subredditId }) => {
 	const { ref: titleRef, ...rest } = register('title');
 
 	return (
-		<div className='w-full p-4 bg-gray-900 rounded-lg border border-gray-600'>
+		<div className='w-full p-4 bg-gray-900 rounded-lg border border-gray-600 text-zinc-50'>
 			<form
 				id='subreddit-post-form'
 				className='w-fit'

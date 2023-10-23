@@ -27,7 +27,9 @@ const SubredditCreatePost: FC<SubredditCreatePostProps> = ({ session }) => {
 						}}
 					/>
 
-					<span className='absolute bottom-0.5 right-0.5 rounded-full w-2 h-2 bg-green-500 outline outline-2 outline-white' />
+					{session ? (
+						<span className='absolute bottom-0.5 right-0.5 rounded-full w-2 h-2 bg-green-500 outline outline-2 outline-white' />
+					) : null}
 				</div>
 
 				<Input
