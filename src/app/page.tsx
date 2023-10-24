@@ -20,7 +20,7 @@ export default async function Home() {
 				{session ? <CustomFeed /> : <GeneralFeed />}
 
 				{/* SUBREDDIT INFO */}
-				<div className='overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last'>
+				<div className='overflow-hidden h-fit rounded-lg border border-gray-600 order-first md:order-last'>
 					<div className='bg-teal-300 px-6 py-4  text-black'>
 						<p className='font-semibold py-3 flex items-center gap-1.5'>
 							<HomeIcon className='w-4 h-4' />
