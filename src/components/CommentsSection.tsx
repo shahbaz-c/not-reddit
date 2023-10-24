@@ -60,7 +60,7 @@ const CommentsSection = async ({ postId }: CommentsSectionProps) => {
 									/>
 								</div>
 
-								{/* render comment replies */}
+								{/* RENDER COMMENT REPLIES */}
 								{topLevelComment.replies
 									.sort((a, b) => b.votes.length - a.votes.length)
 									.map((reply) => {
