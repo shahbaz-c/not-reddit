@@ -87,7 +87,15 @@ const CommentVotes: FC<CommentVotesProps> = ({
 					})}
 				/>
 			</Button>
-			<p className='text-center py-2 font-medium text-sm text-zinc-50'>
+			<p
+				className={
+					numOfVotes > 0
+						? 'text-center py-2 font-medium text-sm text-emerald-500'
+						: numOfVotes < 0
+						? 'text-center py-2 font-medium text-sm text-red-500'
+						: 'text-center py-2 font-medium text-sm text-zinc-50'
+				}
+			>
 				{numOfVotes}
 			</p>
 			<Button
