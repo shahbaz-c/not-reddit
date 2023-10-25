@@ -44,7 +44,7 @@ const page = async ({ params }: PageProps) => {
 	return (
 		<div>
 			{/* <div className='h-full flex flex-col sm:flex-row items-center sm:items-start justify-between'> */}
-			<div className=' flex justify-between'>
+			<div className='px-2 flex justify-between'>
 				<Suspense fallback={<PostVoteShell />}>
 					{/* @ts-expect-error server component */}
 					<PostVoteServer
