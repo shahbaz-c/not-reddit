@@ -41,6 +41,7 @@ const SubredditCreatePost: FC<SubredditCreatePostProps> = ({ session }) => {
 				<Button
 					variant='ghost'
 					onClick={() => router.push(`${pathname}/submit`)}
+					className='hidden md:block'
 				>
 					<ImageIcon className='text-zinc-300' />
 				</Button>
@@ -48,6 +49,7 @@ const SubredditCreatePost: FC<SubredditCreatePostProps> = ({ session }) => {
 				<Button
 					variant='ghost'
 					onClick={() => router.push(`${pathname}/submit`)}
+					className='hidden md:block'
 				>
 					<Link2 className='text-zinc-300' />
 				</Button>
