@@ -39,7 +39,7 @@ export default async function Home() {
 						</div>
 
 						<Link
-							href={`/r/create`}
+							href={session ? `/r/create` : `/sign-in`}
 							className={buttonVariants({
 								className: 'w-full mt-4 mb-6',
 							})}
