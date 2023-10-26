@@ -43,7 +43,7 @@ const page = async ({ params }: PageProps) => {
 
 	return (
 		<div>
-			<div className='h-full flex flex-row sm:flex-row items-start justify-center'>
+			<div className='h-full flex flex-row sm:flex-row items-start'>
 				<Suspense fallback={<PostVoteShell />}>
 					{/* @ts-expect-error server component */}
 					<PostVoteServer
