@@ -44,6 +44,7 @@ const page = async ({ params }: PageProps) => {
 	return (
 		<div>
 			<div className='h-full flex flex-row sm:flex-row items-start justify-between'>
+				{/* <div className='h-full flex flex-col sm:flex-row items-center sm:items-start justify-between'> */}
 				{/* <div className='px-6 py-4 flex justify-between'> */}
 				<Suspense fallback={<PostVoteShell />}>
 					{/* @ts-expect-error server component */}
@@ -62,7 +63,7 @@ const page = async ({ params }: PageProps) => {
 					/>
 				</Suspense>
 
-				<div className='sm:w-0 w-full flex-1 bg-gray-900 p-4 rounded-md'>
+				<div className=' flex-1 bg-gray-900 p-4 rounded-md'>
 					<p className='max-h-40 mt-1 truncate text-xs text-zinc-50'>
 						Posted by u/{post?.author.username ?? cachedPost.authorUsername}
 						<span className='px-1'>•</span>
