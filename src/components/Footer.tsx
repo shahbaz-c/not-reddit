@@ -4,7 +4,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className='max-w-screen-xl mx-auto'>
-				<div className='text-center py-3 text-zinc-400 text-sm'>
+				<div className='text-center py-3 text-zinc-400 text-sm font-extrabold'>
 					<h5 className='flex justify-center'>
 						Built with Next.js &copy; {new Date().getFullYear()}{' '}
 						<span className='ml-2 mr-1'>
