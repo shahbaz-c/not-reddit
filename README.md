@@ -6,9 +6,7 @@ This application utilises The Movie Database API allowing users to view informat
 
 This project was produced using React and the context API. The application made use of useContext, useReducer, useEffect, and useState hooks. Local Storage was also utilised to allow users to save movies to the watchlist component.
 
-React Router v6 was used for routing.
-
-Bootstrap was used for styling.
+Tailwind was used for styling.
 
 FontAwesome was used for icons.
 
